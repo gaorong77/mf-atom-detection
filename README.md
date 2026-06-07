@@ -64,6 +64,8 @@ Key fix vs PA-3HDA: CUSUM only accumulates when **previous frame** believed atom
 
 ## Benchmark Results
 
+### Simulation (synthetic Yb-171, 20×20 array, 500 frames)
+
 Config: 20×20 array (400 sites), 500 frames, simulated Yb-171 platform.
 
 | Metric | Value |
@@ -78,8 +80,42 @@ Config: 20×20 array (400 sites), 500 frames, simulated Yb-171 platform.
 | Total decisions | 200,000 |
 | Speed | 10.3 fps (97.4 ms/frame, pure Python) |
 
-MF calibration: mu_atom=1100.6 ± 14.0,
-mu_bg=63.8 ± 10.5.
+MF calibration: mu_atom=1100.6 ± 14.0, mu_bg=63.8 ± 10.5.
+
+---
+
+### Real Data (hf_dataset — Yb-171 fluorescence, sCMOS Qbit-4610)
+
+Config: 32×32 array (1024 sites), 100 test frames, 6 exposure times.
+MF calibrated independently for each exposure using 801 training frames.
+PSF sigma: 1.274 px (auto-estimated from 160 ms frames).
+Background floor: 784 ADU (2nd percentile).
+
+#### Single-frame MF detection
+
+| Exposure | MF SNR | Fidelity | FAR | MDR |
+|----------|--------|----------|-----|-----|
+| 8 ms | 0.71 | 63.67 % | 28.20 % | 44.46 % |
+| 10 ms | 1.01 | 70.14 % | 22.63 % | 37.10 % |
+| 20 ms | 1.79 | 82.96 % | 11.50 % | 22.57 % |
+| 40 ms | 3.07 | 95.24 % | 3.12 % | 6.40 % |
+| 80 ms | 4.64 | **99.58 %** | 0.61 % | 0.24 % |
+| 160 ms | 5.84 | **99.87 %** | 0.24 % | 0.01 % |
+
+Short-exposure performance is limited by physics (photon shot noise), not by the
+MF algorithm: at 8 ms the signal is < 80 ADU above background, giving SNR < 1.
+
+#### Two-layer MF routing
+
+| Config | L1 exp | L2 exp | Fidelity | L2 route rate |
+|--------|--------|--------|----------|---------------|
+| A | 8 ms | 40 ms | 94.33 % | 97.35 % (L1 almost always uncertain) |
+| **B (recommended)** | **40 ms** | **160 ms** | **98.88 %** | **16.52 %** |
+
+Config B provides the best accuracy-speed trade-off: 83 % of sites are resolved
+at L1 (40 ms) and only 16.5 % are routed to the high-SNR L2 frame.
+
+> Full results: `results/real_data_benchmark.json`
 
 ---
 
@@ -88,17 +124,19 @@ mu_bg=63.8 ± 10.5.
 ```
 mf_atom_detection/
 ├── src/
-│   ├── config.py        System-wide parameters (dataclasses)
-│   ├── psf.py           Gaussian PSF model, unit-norm template generation
-│   ├── mf_detector.py   Vectorized MF score + LRT probability conversion
-│   ├── layer1_mf.py     L1: MF-Array + Bayesian log-odds fusion + CUSUM
-│   ├── layer2_mf.py     L2: MF-Array precise judgment
-│   ├── simulate.py      Synthetic Yb-171 fluorescence image simulator
-│   └── system.py        Two-layer system orchestration + 5-type output
+│   ├── config.py           System-wide parameters (dataclasses)
+│   ├── psf.py              Gaussian PSF model, unit-norm template generation
+│   ├── mf_detector.py      Vectorized MF score + LRT probability conversion
+│   ├── layer1_mf.py        L1: MF-Array + Bayesian log-odds fusion + CUSUM
+│   ├── layer2_mf.py        L2: MF-Array precise judgment
+│   ├── simulate.py         Synthetic Yb-171 fluorescence image simulator
+│   └── system.py           Two-layer system orchestration + 5-type output
 ├── eval/
-│   └── benchmark.py     FAR / MDR / Fidelity / routing-rate / speed
+│   ├── benchmark.py        Simulation benchmark (FAR/MDR/Fidelity/speed)
+│   └── benchmark_real.py   Real-data benchmark (hf_dataset, per-exp calibration)
 ├── results/
-│   └── benchmark.json   Latest evaluation results
+│   ├── benchmark.json           Simulation evaluation results
+│   └── real_data_benchmark.json Real-data evaluation results
 └── README.md
 ```
 
