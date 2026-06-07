@@ -1,0 +1,170 @@
+{
+  "dataset": "hf_dataset (real Yb-171)",
+  "description": "L1\u2192L1.5-Wide(3n\u00d73n=15px ROI, same frame, no extra exposure)\u2192L2. L1-Wide uses same Gaussian template in wider ROI, calibrated independently.",
+  "r_l1": 5,
+  "r_wide": 15,
+  "sigma": 1.274,
+  "bg": 784.0,
+  "pairs": [
+    {
+      "l1_exp": "8ms",
+      "l2_exp": "20ms",
+      "snr_l1": 0.707,
+      "snr_wide": 0.659,
+      "l1_thresholds": {
+        "H": 0.866,
+        "L": 0.0001
+      },
+      "wide_thresholds": {
+        "H": 0.877245,
+        "L": 0.0001
+      },
+      "wide_decided_pct": 0.1012,
+      "wide_prec_atom": 0.53125,
+      "wide_prec_empty": 0.0,
+      "routing_to_wide_pct": 96.6153,
+      "routing_to_l2_pct": 96.5175,
+      "two_layer": {
+        "Fidelity": 0.829944,
+        "FAR": 0.122426,
+        "MDR": 0.217686,
+        "l2_pct": 96.6153
+      },
+      "three_layer_wide": {
+        "Fidelity": 0.829763,
+        "FAR": 0.123207,
+        "MDR": 0.217268
+      },
+      "gain_pct": -0.018158,
+      "l2_reduction_pp": -0.0978
+    },
+    {
+      "l1_exp": "10ms",
+      "l2_exp": "20ms",
+      "snr_l1": 0.999,
+      "snr_wide": 1.018,
+      "l1_thresholds": {
+        "H": 0.8054,
+        "L": 0.1615
+      },
+      "wide_thresholds": {
+        "H": 0.832187,
+        "L": 0.149456
+      },
+      "wide_decided_pct": 0.439,
+      "wide_prec_atom": 0.590909,
+      "wide_prec_empty": 0.93609,
+      "routing_to_wide_pct": 87.2701,
+      "routing_to_l2_pct": 86.887,
+      "two_layer": {
+        "Fidelity": 0.839109,
+        "FAR": 0.137935,
+        "MDR": 0.183846,
+        "l2_pct": 87.2701
+      },
+      "three_layer_wide": {
+        "Fidelity": 0.839045,
+        "FAR": 0.138389,
+        "MDR": 0.183521
+      },
+      "gain_pct": -0.006455,
+      "l2_reduction_pp": -0.3831
+    },
+    {
+      "l1_exp": "20ms",
+      "l2_exp": "40ms",
+      "snr_l1": 1.758,
+      "snr_wide": 1.808,
+      "l1_thresholds": {
+        "H": 0.9649,
+        "L": 0.0001
+      },
+      "wide_thresholds": {
+        "H": 0.959015,
+        "L": 0.0001
+      },
+      "wide_decided_pct": 1.42,
+      "wide_prec_atom": 0.905597,
+      "wide_prec_empty": 0.0,
+      "routing_to_wide_pct": 85.8844,
+      "routing_to_l2_pct": 84.6648,
+      "two_layer": {
+        "Fidelity": 0.953797,
+        "FAR": 0.043224,
+        "MDR": 0.049182,
+        "l2_pct": 85.8844
+      },
+      "three_layer_wide": {
+        "Fidelity": 0.953495,
+        "FAR": 0.045058,
+        "MDR": 0.047952
+      },
+      "gain_pct": -0.030208,
+      "l2_reduction_pp": -1.2196
+    },
+    {
+      "l1_exp": "40ms",
+      "l2_exp": "80ms",
+      "snr_l1": 3.117,
+      "snr_wide": 3.196,
+      "l1_thresholds": {
+        "H": 0.9999,
+        "L": 0.0226
+      },
+      "wide_thresholds": {
+        "H": 0.9999,
+        "L": 0.0001
+      },
+      "wide_decided_pct": 1.3625,
+      "wide_prec_atom": 0.955466,
+      "wide_prec_empty": 0.0,
+      "routing_to_wide_pct": 55.4118,
+      "routing_to_l2_pct": 54.6568,
+      "two_layer": {
+        "Fidelity": 0.995139,
+        "FAR": 0.006774,
+        "MDR": 0.002948,
+        "l2_pct": 55.4118
+      },
+      "three_layer_wide": {
+        "Fidelity": 0.994851,
+        "FAR": 0.007374,
+        "MDR": 0.002924
+      },
+      "gain_pct": -0.028806,
+      "l2_reduction_pp": -0.755
+    },
+    {
+      "l1_exp": "80ms",
+      "l2_exp": "160ms",
+      "snr_l1": 4.738,
+      "snr_wide": 4.646,
+      "l1_thresholds": {
+        "H": 0.9999,
+        "L": 0.0326
+      },
+      "wide_thresholds": {
+        "H": 0.9999,
+        "L": 0.042654
+      },
+      "wide_decided_pct": 9.2045,
+      "wide_prec_atom": 0.964286,
+      "wide_prec_empty": 1.0,
+      "routing_to_wide_pct": 5.1362,
+      "routing_to_l2_pct": 4.6634,
+      "two_layer": {
+        "Fidelity": 0.999188,
+        "FAR": 0.00109,
+        "MDR": 0.000534,
+        "l2_pct": 5.1362
+      },
+      "three_layer_wide": {
+        "Fidelity": 0.999179,
+        "FAR": 0.001108,
+        "MDR": 0.000534
+      },
+      "gain_pct": -0.000908,
+      "l2_reduction_pp": -0.4728
+    }
+  ]
+}
