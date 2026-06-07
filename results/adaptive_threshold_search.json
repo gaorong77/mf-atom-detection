@@ -1,0 +1,139 @@
+{
+  "dataset": "hf_dataset (real Yb-171)",
+  "method": "Ternary search on symmetric theta_H=1-theta_L, maximizing two-layer Fidelity",
+  "roi_size": 5,
+  "psf_sigma_px": 1.274,
+  "background_adu": 784.0,
+  "pairs": [
+    {
+      "l1_exp": "8ms",
+      "l2_exp": "20ms",
+      "snr_l1": 0.707,
+      "theta_H_opt": 0.884016,
+      "theta_L_opt": 0.115984,
+      "l2_routing_pct": 101.3959,
+      "Fidelity": 0.830163,
+      "FAR": 0.123334,
+      "MDR": 0.21634,
+      "TP": 33764,
+      "FP": 6791,
+      "TN": 48271,
+      "FN": 9321,
+      "baseline_05": {
+        "Fidelity": 0.636825,
+        "FAR": 0.28181,
+        "MDR": 0.44454
+      },
+      "prev_095": {
+        "Fidelity": 0.829819,
+        "FAR": 0.118521,
+        "MDR": 0.221841,
+        "routing_pct": 103.4785
+      }
+    },
+    {
+      "l1_exp": "10ms",
+      "l2_exp": "20ms",
+      "snr_l1": 1.029,
+      "theta_H_opt": 0.826069,
+      "theta_L_opt": 0.173931,
+      "l2_routing_pct": 89.8988,
+      "Fidelity": 0.838664,
+      "FAR": 0.135901,
+      "MDR": 0.18677,
+      "TP": 35038,
+      "FP": 7483,
+      "TN": 47579,
+      "FN": 8047,
+      "baseline_05": {
+        "Fidelity": 0.70155,
+        "FAR": 0.232156,
+        "MDR": 0.364744
+      },
+      "prev_095": {
+        "Fidelity": 0.833308,
+        "FAR": 0.120246,
+        "MDR": 0.213137,
+        "routing_pct": 100.3597
+      }
+    },
+    {
+      "l1_exp": "20ms",
+      "l2_exp": "40ms",
+      "snr_l1": 1.796,
+      "theta_H_opt": 0.964064,
+      "theta_L_opt": 0.035936,
+      "l2_routing_pct": 87.8794,
+      "Fidelity": 0.953936,
+      "FAR": 0.044059,
+      "MDR": 0.048068,
+      "TP": 41014,
+      "FP": 2426,
+      "TN": 52636,
+      "FN": 2071,
+      "baseline_05": {
+        "Fidelity": 0.829964,
+        "FAR": 0.116723,
+        "MDR": 0.223349
+      },
+      "prev_095": {
+        "Fidelity": 0.953723,
+        "FAR": 0.046112,
+        "MDR": 0.046443,
+        "routing_pct": 85.9751
+      }
+    },
+    {
+      "l1_exp": "40ms",
+      "l2_exp": "80ms",
+      "snr_l1": 3.074,
+      "theta_H_opt": 0.99989,
+      "theta_L_opt": 0.00011,
+      "l2_routing_pct": 82.4895,
+      "Fidelity": 0.994965,
+      "FAR": 0.008191,
+      "MDR": 0.00188,
+      "TP": 43004,
+      "FP": 451,
+      "TN": 54611,
+      "FN": 81,
+      "baseline_05": {
+        "Fidelity": 0.953069,
+        "FAR": 0.03398,
+        "MDR": 0.059882
+      },
+      "prev_095": {
+        "Fidelity": 0.991656,
+        "FAR": 0.011024,
+        "MDR": 0.005663,
+        "routing_pct": 27.4038
+      }
+    },
+    {
+      "l1_exp": "80ms",
+      "l2_exp": "160ms",
+      "snr_l1": 4.719,
+      "theta_H_opt": 0.989119,
+      "theta_L_opt": 0.010881,
+      "l2_routing_pct": 9.1557,
+      "Fidelity": 0.998936,
+      "FAR": 0.00178,
+      "MDR": 0.000348,
+      "TP": 43070,
+      "FP": 98,
+      "TN": 54964,
+      "FN": 15,
+      "baseline_05": {
+        "Fidelity": 0.995738,
+        "FAR": 0.006157,
+        "MDR": 0.002367
+      },
+      "prev_095": {
+        "Fidelity": 0.998685,
+        "FAR": 0.00198,
+        "MDR": 0.00065,
+        "routing_pct": 3.0485
+      }
+    }
+  ]
+}
