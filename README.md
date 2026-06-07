@@ -140,11 +140,37 @@ mf_atom_detection/
 └── README.md
 ```
 
+### Two-Layer Pairs Benchmark (2× exposure ratio, conf_thr = 0.9)
+
+Each MF model calibrated independently on its own exposure training data.
+Route rule: site sent to L2 when L1 confidence = max(p, 1−p) < **0.9**.
+
+| L1 exp | L2 exp | L1 SNR | L1 Fidelity | Route % | 2L Fidelity | Fid Gain |
+|--------|--------|--------|-------------|---------|-------------|----------|
+| 8 ms | 20 ms ★ | 0.71 | 63.67 % | 97.87 % | 82.99 % | +19.32 % |
+| 10 ms | 20 ms | 1.03 | 70.14 % | 93.12 % | 83.64 % | +13.50 % |
+| 20 ms | 40 ms | 1.80 | 82.99 % | 64.76 % | 94.96 % | +11.97 % |
+| **40 ms** | **80 ms** | **3.07** | **95.31 %** | **15.79 %** | **98.79 %** | **+3.48 %** |
+| **80 ms** | **160 ms** | **4.72** | **99.57 %** | **1.60 %** | **99.84 %** | **+0.27 %** |
+
+★ 16 ms not in dataset; 20 ms used as proxy (2.5× ratio).
+
+Key observations:
+- **Low-SNR L1 (8–20 ms)**: route rate > 64 %; L2 absorbs most of the work.
+- **Inflection at 40 ms (SNR≈3)**: route rate drops to 15.8 %; two-layer fidelity reaches 98.79 %.
+- **80 ms L1 is near-optimal**: only 1.6 % routed; L2 provides marginal (+0.27 %) uplift.
+
+> Full results: `results/two_layer_pairs_benchmark.json`
+
+---
+
 ## Quick Start
 
 ```bash
 pip install numpy
-python eval/benchmark.py
+python eval/benchmark.py                            # simulation benchmark
+python eval/benchmark_real.py --data-dir ./hf_dataset     # real-data benchmark
+python eval/benchmark_two_layer_pairs.py --data-dir ./hf_dataset  # 2x-pair benchmark
 ```
 
 ---
