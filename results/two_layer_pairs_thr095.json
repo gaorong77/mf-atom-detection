@@ -1,0 +1,114 @@
+{
+  "dataset": "hf_dataset (real Yb-171)",
+  "roi_size": 5,
+  "psf_sigma_px": 1.274,
+  "background_adu": 784.0,
+  "thr_atom": 0.95,
+  "thr_empty": 0.05,
+  "description": "L1 p>=0.95\u2192\u6709\u539f\u5b50, p<=0.05\u2192\u65e0\u539f\u5b50, else\u2192L2(2x exp)",
+  "per_exp_snr": {
+    "8ms": 0.707,
+    "10ms": 1.029,
+    "20ms": 1.796,
+    "40ms": 3.074,
+    "80ms": 4.719,
+    "160ms": 5.859
+  },
+  "pairs": [
+    {
+      "l1_exp": "8ms",
+      "l2_exp": "20ms",
+      "mf_snr_l1": 0.707,
+      "mf_snr_l2": 1.796,
+      "l1_single": {
+        "Fidelity": 0.636711,
+        "FAR": 0.281991,
+        "MDR": 0.444586
+      },
+      "l2_routing_pct": 99.2022,
+      "two_layer": {
+        "Fidelity": 0.829819,
+        "FAR": 0.118521,
+        "MDR": 0.221841
+      },
+      "fidelity_gain_pct": 19.3108,
+      "note": "\u2605proxy"
+    },
+    {
+      "l1_exp": "10ms",
+      "l2_exp": "20ms",
+      "mf_snr_l1": 1.029,
+      "mf_snr_l2": 1.796,
+      "l1_single": {
+        "Fidelity": 0.701417,
+        "FAR": 0.232284,
+        "MDR": 0.364883
+      },
+      "l2_routing_pct": 96.3381,
+      "two_layer": {
+        "Fidelity": 0.833308,
+        "FAR": 0.120246,
+        "MDR": 0.213137
+      },
+      "fidelity_gain_pct": 13.189194,
+      "note": ""
+    },
+    {
+      "l1_exp": "20ms",
+      "l2_exp": "40ms",
+      "mf_snr_l1": 1.796,
+      "mf_snr_l2": 3.074,
+      "l1_single": {
+        "Fidelity": 0.829879,
+        "FAR": 0.116777,
+        "MDR": 0.223465
+      },
+      "l2_routing_pct": 82.893,
+      "two_layer": {
+        "Fidelity": 0.953723,
+        "FAR": 0.046112,
+        "MDR": 0.046443
+      },
+      "fidelity_gain_pct": 12.384398,
+      "note": ""
+    },
+    {
+      "l1_exp": "40ms",
+      "l2_exp": "80ms",
+      "mf_snr_l1": 3.074,
+      "mf_snr_l2": 4.719,
+      "l1_single": {
+        "Fidelity": 0.953069,
+        "FAR": 0.03398,
+        "MDR": 0.059882
+      },
+      "l2_routing_pct": 26.2076,
+      "two_layer": {
+        "Fidelity": 0.991656,
+        "FAR": 0.011024,
+        "MDR": 0.005663
+      },
+      "fidelity_gain_pct": 3.858717,
+      "note": ""
+    },
+    {
+      "l1_exp": "80ms",
+      "l2_exp": "160ms",
+      "mf_snr_l1": 4.719,
+      "mf_snr_l2": 5.859,
+      "l1_single": {
+        "Fidelity": 0.995738,
+        "FAR": 0.006157,
+        "MDR": 0.002367
+      },
+      "l2_routing_pct": 2.7642,
+      "two_layer": {
+        "Fidelity": 0.998685,
+        "FAR": 0.00198,
+        "MDR": 0.00065
+      },
+      "fidelity_gain_pct": 0.294732,
+      "note": ""
+    }
+  ]
+}
