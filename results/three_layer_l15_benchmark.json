@@ -1,0 +1,134 @@
+{
+  "dataset": "hf_dataset (real Yb-171)",
+  "description": "Three-tier cascade L1\u2192L1.5\u2192L2 with 2x exposure at each level. L1 thresholds reuse decoupled-optimal from prior run. L1.5 thresholds searched independently on L1-routed subset using separable error decomposition.",
+  "pairs": [
+    {
+      "l1_exp": "8ms",
+      "l15_exp": "20ms",
+      "l2_exp": "40ms",
+      "snr_l1": 0.707,
+      "l1_thresholds": {
+        "theta_H": 0.866,
+        "theta_L": 0.0001
+      },
+      "l15_thresholds": {
+        "theta_H": 0.96487,
+        "theta_L": 0.0001
+      },
+      "l15_precision_atom": 0.952308,
+      "l15_precision_empty": 0.0,
+      "l15_decided_pct": 14.3728,
+      "routing_to_l15_pct": 96.6153,
+      "routing_to_l2_pct": 82.729,
+      "two_layer_baseline": {
+        "Fidelity": 0.949017,
+        "FAR": 0.043987,
+        "MDR": 0.057978,
+        "routing_pct": 96.6153
+      },
+      "three_layer": {
+        "Fidelity": 0.949868,
+        "FAR": 0.053449,
+        "MDR": 0.046814
+      },
+      "gain_pct": 0.085096,
+      "l2_routing_reduction_pct": 13.8863
+    },
+    {
+      "l1_exp": "10ms",
+      "l15_exp": "20ms",
+      "l2_exp": "40ms",
+      "snr_l1": 1.029,
+      "l1_thresholds": {
+        "theta_H": 0.8054,
+        "theta_L": 0.1615
+      },
+      "l15_thresholds": {
+        "theta_H": 0.962994,
+        "theta_L": 0.0001
+      },
+      "l15_precision_atom": 0.948182,
+      "l15_precision_empty": 0.0,
+      "l15_decided_pct": 12.2912,
+      "routing_to_l15_pct": 86.3847,
+      "routing_to_l2_pct": 75.767,
+      "two_layer_baseline": {
+        "Fidelity": 0.942034,
+        "FAR": 0.065962,
+        "MDR": 0.049971,
+        "routing_pct": 86.3847
+      },
+      "three_layer": {
+        "Fidelity": 0.942918,
+        "FAR": 0.073662,
+        "MDR": 0.040501
+      },
+      "gain_pct": 0.088462,
+      "l2_routing_reduction_pct": 10.6177
+    },
+    {
+      "l1_exp": "20ms",
+      "l15_exp": "40ms",
+      "l2_exp": "80ms",
+      "snr_l1": 1.796,
+      "l1_thresholds": {
+        "theta_H": 0.9649,
+        "theta_L": 0.0001
+      },
+      "l15_thresholds": {
+        "theta_H": 0.9999,
+        "theta_L": 0.022619
+      },
+      "l15_precision_atom": 0.991713,
+      "l15_precision_empty": 0.998474,
+      "l15_decided_pct": 40.17,
+      "routing_to_l15_pct": 84.8431,
+      "routing_to_l2_pct": 50.7616,
+      "two_layer_baseline": {
+        "Fidelity": 0.989857,
+        "FAR": 0.018452,
+        "MDR": 0.001834,
+        "routing_pct": 84.8431
+      },
+      "three_layer": {
+        "Fidelity": 0.989432,
+        "FAR": 0.018815,
+        "MDR": 0.002321
+      },
+      "gain_pct": -0.042532,
+      "l2_routing_reduction_pct": 34.0815
+    },
+    {
+      "l1_exp": "40ms",
+      "l15_exp": "80ms",
+      "l2_exp": "160ms",
+      "snr_l1": 3.074,
+      "l1_thresholds": {
+        "theta_H": 0.9999,
+        "theta_L": 0.0226
+      },
+      "l15_thresholds": {
+        "theta_H": 0.9999,
+        "theta_L": 0.050768
+      },
+      "l15_precision_atom": 0.999088,
+      "l15_precision_empty": 0.999619,
+      "l15_decided_pct": 94.5584,
+      "routing_to_l15_pct": 57.5952,
+      "routing_to_l2_pct": 3.1341,
+      "two_layer_baseline": {
+        "Fidelity": 0.997431,
+        "FAR": 0.004141,
+        "MDR": 0.000998,
+        "routing_pct": 57.5952
+      },
+      "three_layer": {
+        "Fidelity": 0.997902,
+        "FAR": 0.002942,
+        "MDR": 0.001253
+      },
+      "gain_pct": 0.047167,
+      "l2_routing_reduction_pct": 54.4612
+    }
+  ]
+}
